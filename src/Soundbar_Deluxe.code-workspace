@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../Documents/Soundbar_Deluxe"
+		},
+		{
+			"name": "Soundbar_Deluxe",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"compare": "cpp",
+			"cstdint": "cpp"
+		}
+	}
+}
