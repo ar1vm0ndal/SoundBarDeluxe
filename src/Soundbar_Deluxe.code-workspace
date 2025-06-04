@@ -11,7 +11,12 @@
 	"settings": {
 		"files.associations": {
 			"compare": "cpp",
-			"cstdint": "cpp"
+			"cstdint": "cpp",
+			"new": "cpp",
+			"array": "cpp",
+			"string_view": "cpp",
+			"initializer_list": "cpp",
+			"utility": "cpp"
 		}
 	}
 }
