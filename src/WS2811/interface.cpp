@@ -4,8 +4,8 @@
 #define outpin 2
 
 constexpr uint32_t transmissionTime = 100; //full bit transmission cycle of 1.25 us * 80MHz
-constexpr uint32_t zero = 28; //0.35 us/12.5ns = 28 cycles of high for 0 bit
-constexpr uint32_t one = 56; //0.55 us/12.5ns = 44 cycles of high for 1 bit
+constexpr uint32_t zero = 20; //0.5 us/12.5ns = 20 cycles of high for 0 bit
+constexpr uint32_t one = 48; //0.6 us/12.5ns = 48 cycles of high for 1 bit
 
 static inline uint32_t cycleCount(){
   uint32_t ccount;
@@ -35,5 +35,5 @@ void IRAM_ATTR sendColor(uint32_t color){
 
 void reset(){
   GPIO.out_w1tc = (1U << outpin);
-  delayMicroseconds(300); // WS2811 demands > 280us of LOW time between LED transmission cycles
+  delayMicroseconds(320); // WS2811 demands > 280us of LOW time between LED transmission cycles
 }
