@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
 #define outpin 2
-#define NUM_LEDS 60
+#define NUM_LEDS 100
 #define CPU_FREQUENCY 80
 
 constexpr uint32_t transmissionTime = 100; //full bit transmission cycle of 1.25 us * 80MHz
@@ -51,5 +51,15 @@ void loop(){
     sendColor(0x00FF00);   // Red (BRG order)
   }
   reset();
-
+  delay(1000);
+  for (uint16_t i = 0; i < NUM_LEDS; ++i) {
+    sendColor(0x00FF66);   // Red (BRG order)
+  }
+  reset();
+  delay(1000);
+    for (uint16_t i = 0; i < NUM_LEDS; ++i) {
+    sendColor(0x0000FF);   // Red (BRG order)
+  }
+  reset();
+  delay(1000);
 }
