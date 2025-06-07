@@ -14,18 +14,19 @@ void setup(){
   setCpuFrequencyMhz(CPU_FREQUENCY);
   pinMode(out, OUTPUT);
   digitalWrite(out, LOW);  
-  colorGradientGenerate(0x000000, 0x0000FF, colors, size);
+  colorGradientGenerate(0x0000FF,0x00FFFF, colors, size);
+
 }
 
 void loop(){
   
   for(uint16_t i = 0; i < NUM_LEDS; ++i) {
-    sendColor(colors[order]);   
+    sendColor(0x00CC55);   //BRG
+    
   }
   reset();
-  order = (order+1) % size;
-  Serial.println(order);
   Serial.println(colors[order]);
-  delay(50);
+  order = (order+1) % size;
+  delay(1000);
 }
 
