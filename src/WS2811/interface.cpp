@@ -3,9 +3,9 @@
 
 #define outpin 2
 
-constexpr uint32_t transmissionTime = 100; //full bit transmission cycle of 1.25 us * 80MHz
-constexpr uint32_t zero = 20; //0.5 us/12.5ns = 20 cycles of high for 0 bit
-constexpr uint32_t one = 48; //0.6 us/12.5ns = 48 cycles of high for 1 bit
+constexpr uint32_t transmissionTime = 97; //full bit transmission cycle of 1.25 us * 80MHz
+constexpr uint32_t zero = 25; //0.5 us/12.5ns = 20 cycles of high for 0 bit
+constexpr uint32_t one = 53; //0.6 us/12.5ns = 48 cycles of high for 1 bit
 
 static inline uint32_t cycleCount(){
   uint32_t ccount;
@@ -21,7 +21,7 @@ static inline void sendBit(bool b){
   GPIO.out_w1ts = (1U << outpin);  //Send HIGH 
   while (cycleCount() - startTime < highTime){} //Wait for the corressponding bit time
   GPIO.out_w1tc = (1U << outpin); //Send LOW
-  while (cycleCount() - startTime < transmissionTime){} //Wait for the corresponding bit low time 
+  while (cycleCount() - startTime < transmissionTime ){} //Wait for the corresponding bit low time 
 }
 
 void IRAM_ATTR sendColor(uint32_t color){
