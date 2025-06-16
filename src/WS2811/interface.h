@@ -1,6 +1,7 @@
 #ifndef INTERFACE_H
 
 #include <Arduino.h>
+constexpr uint16_t NUM_LEDS  = 60; 
 void initRmt();
 void setPixel(uint16_t idx, uint8_t r, uint8_t g, uint8_t b);
 void show();

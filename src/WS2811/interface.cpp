@@ -1,8 +1,7 @@
 #include <Arduino.h>
 #include "driver/rmt.h"
-
-
-constexpr uint16_t NUM_LEDS  = 60;             
+#include "interface.h"
+            
 constexpr gpio_num_t LED_PIN = GPIO_NUM_2;     //DIN pin
 
 

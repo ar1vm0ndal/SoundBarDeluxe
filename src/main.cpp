@@ -3,7 +3,6 @@
 #include "WS2811/interface.h"
 
 #define out 2
-#define NUM_LEDS 60
 #define CPU_FREQUENCY 160
 
 constexpr uint16_t size = 100;
