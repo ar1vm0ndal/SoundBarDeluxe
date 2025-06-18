@@ -67,7 +67,7 @@ void show(){
 }
 
 void colorGradientGenerate(uint32_t initialColor, uint32_t finalColor, uint32_t* dataArray, uint16_t size){
-    for (uint8_t i = 0; i < size; ++i){
+    for (uint16_t i = 0; i < size; ++i){
         double multiplier = double(i) / (size - 1); 
         uint8_t red   = uint8_t(multiplier * ((finalColor >> 16) & 0xFF) + (1.0 - multiplier) * ((initialColor >> 16) & 0xFF));  //MSB
         uint8_t green = uint8_t(multiplier * (((finalColor & 0xFF00) >> 8) & 0xFF) + (1.0 - multiplier) * (((initialColor & 0xFF00) >> 8) & 0xFF));
